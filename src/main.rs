@@ -27,6 +27,8 @@ fn main() -> io::Result<()> {
     let available_templates = [
         "PNAS-style numbered-lines(single column)",
         "PNAS-Style no line number (double column)",
+        "Styled Report (one-column)",
+        "Global Leaders Delegate Research",
     ];
     let template = Select::new("Select Template", available_templates.to_vec())
         .prompt()
@@ -39,6 +41,14 @@ fn main() -> io::Result<()> {
         (
             available_templates[1],
             "/Users/jayansunil/.config/templates/latex/template_double_column",
+        ),
+        (
+            available_templates[2],
+            "/Users/jayansunil/.config/templates/latex/template_report_styled",
+        ),
+        (
+            available_templates[3],
+            "/Users/jayansunil/.config/templates/latex/template_research_global_leaders",
         ),
     ]);
     let current_dir = current_dir()?;

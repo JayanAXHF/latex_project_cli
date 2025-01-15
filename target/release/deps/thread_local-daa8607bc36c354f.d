@@ -1,0 +1,10 @@
+/Users/jayansunil/Dev/rust/create_new_latex_project/target/release/deps/libthread_local-daa8607bc36c354f.rmeta: /Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/lib.rs /Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/cached.rs /Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/thread_id.rs /Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/unreachable.rs
+
+/Users/jayansunil/Dev/rust/create_new_latex_project/target/release/deps/libthread_local-daa8607bc36c354f.rlib: /Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/lib.rs /Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/cached.rs /Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/thread_id.rs /Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/unreachable.rs
+
+/Users/jayansunil/Dev/rust/create_new_latex_project/target/release/deps/thread_local-daa8607bc36c354f.d: /Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/lib.rs /Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/cached.rs /Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/thread_id.rs /Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/unreachable.rs
+
+/Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/lib.rs:
+/Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/cached.rs:
+/Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/thread_id.rs:
+/Users/jayansunil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/unreachable.rs:

@@ -29,6 +29,8 @@ fn main() -> io::Result<()> {
         "PNAS-Style no line number (double column)",
         "Styled Report (one-column)",
         "Global Leaders Delegate Research",
+        "Position Paper Template",
+        "Draft Resolution Template",
     ];
     let template = Select::new("Select Template", available_templates.to_vec())
         .prompt()
@@ -49,6 +51,14 @@ fn main() -> io::Result<()> {
         (
             available_templates[3],
             "/Users/jayansunil/.config/templates/latex/template_research_global_leaders",
+        ),
+        (
+            available_templates[4],
+            "/Users/jayansunil/.config/templates/latex/template_position_paper",
+        ),
+        (
+            available_templates[5],
+            "/Users/jayansunil/.config/templates/latex/template_draft_resolution",
         ),
     ]);
     let current_dir = current_dir()?;

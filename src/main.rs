@@ -69,7 +69,6 @@ fn main() -> io::Result<()> {
         let entry = entry?;
         let path = entry.path();
         let name = entry.file_name();
-        let _ = fs::write(current_dir.join(&project_name), "");
         let _ = fs::copy(path, project_dir.join(name));
     }
     Ok(())

@@ -1,3 +1,4 @@
+use std::path::PathBuf;
 use std::{
     collections::HashMap,
     env::{self, current_dir},
@@ -38,29 +39,30 @@ fn main() -> io::Result<()> {
     let mapping = HashMap::from([
         (
             available_templates[0],
-            "/Users/jayansunil/.config/templates/latex/template_num_lines",
+            get_path("/.config/templates/latex/template_num_lines"),
         ),
         (
             available_templates[1],
-            "/Users/jayansunil/.config/templates/latex/template_double_column",
+            get_path("/.config/templates/latex/template_double_column"),
         ),
         (
             available_templates[2],
-            "/Users/jayansunil/.config/templates/latex/template_report_styled",
+            get_path("/.config/templates/latex/template_report_styled"),
         ),
         (
             available_templates[3],
-            "/Users/jayansunil/.config/templates/latex/template_research_global_leaders",
+            get_path("/.config/templates/latex/template_research_global_leaders"),
         ),
         (
             available_templates[4],
-            "/Users/jayansunil/.config/templates/latex/template_position_paper",
+            get_path("/.config/templates/latex/template_position_paper"),
         ),
         (
             available_templates[5],
-            "/Users/jayansunil/.config/templates/latex/template_draft_resolution",
+            get_path("/.config/templates/latex/template_draft_resolution"),
         ),
     ]);
+
     let current_dir = current_dir()?;
     let project_dir = current_dir.join(&project_name);
     create_dir_all(&project_dir)?;
@@ -69,7 +71,18 @@ fn main() -> io::Result<()> {
         let entry = entry?;
         let path = entry.path();
         let name = entry.file_name();
+        let _ = fs::write(current_dir.join(&project_name), "");
         let _ = fs::copy(path, project_dir.join(name));
     }
     Ok(())
+}
+
+fn get_path(partial_path: &str) -> String {
+    let mut partial_path = partial_path.to_string().chars().collect::<Vec<_>>();
+    partial_path.remove(0);
+    let partial_path = partial_path.into_iter().collect::<String>();
+    let home_dir = dirs::home_dir().unwrap();
+    let home_dir = home_dir.as_path();
+    let complete_dir = home_dir.join(partial_path);
+    complete_dir.to_str().unwrap().to_owned()
 }

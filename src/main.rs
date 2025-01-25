@@ -32,6 +32,7 @@ fn main() -> io::Result<()> {
         "Global Leaders Delegate Research",
         "Position Paper Template",
         "Draft Resolution Template",
+        "Multipurpose Report Template",
     ];
     let template = Select::new("Select Template", available_templates.to_vec())
         .prompt()
@@ -60,6 +61,10 @@ fn main() -> io::Result<()> {
         (
             available_templates[5],
             get_path("/.config/templates/latex/template_draft_resolution"),
+        ),
+        (
+            available_templates[6],
+            get_path("/.config/templates/latex/template_multipurpose"),
         ),
     ]);
 

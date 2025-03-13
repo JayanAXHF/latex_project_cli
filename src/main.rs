@@ -1,3 +1,5 @@
+use inquire::Select;
+use serde::{Deserialize, Serialize};
 use std::path::PathBuf;
 use std::{
     collections::HashMap,
@@ -7,7 +9,16 @@ use std::{
     path::Path,
 };
 
-use inquire::Select;
+#[derive(Serialize, Deserialize)]
+struct Template {
+    name: String,
+    path: String,
+}
+
+#[derive(Serialize, Deserialize)]
+struct Json {
+    templates: Vec<Template>,
+}
 
 fn main() -> io::Result<()> {
     let mut project_name = String::new();
@@ -25,48 +36,24 @@ fn main() -> io::Result<()> {
         };
     }
 
-    let available_templates = [
-        "PNAS-style numbered-lines(single column)",
-        "PNAS-Style no line number (double column)",
-        "Styled Report (one-column)",
-        "Global Leaders Delegate Research",
-        "Position Paper Template",
-        "Draft Resolution Template",
-        "Multipurpose Report Template",
-    ];
+    let parsed_json: Json = serde_json::from_str(include_str!("../templates.json")).unwrap();
+    let available_templates = parsed_json
+        .templates
+        .iter()
+        .map(|t| &t.name)
+        .collect::<Vec<_>>();
+
     let template = Select::new("Select Template", available_templates.to_vec())
         .prompt()
         .unwrap();
-    let mapping = HashMap::from([
-        (
-            available_templates[0],
-            get_path("/.config/templates/latex/template_num_lines"),
-        ),
-        (
-            available_templates[1],
-            get_path("/.config/templates/latex/template_double_column"),
-        ),
-        (
-            available_templates[2],
-            get_path("/.config/templates/latex/template_report_styled"),
-        ),
-        (
-            available_templates[3],
-            get_path("/.config/templates/latex/template_research_global_leaders"),
-        ),
-        (
-            available_templates[4],
-            get_path("/.config/templates/latex/template_position_paper"),
-        ),
-        (
-            available_templates[5],
-            get_path("/.config/templates/latex/template_draft_resolution"),
-        ),
-        (
-            available_templates[6],
-            get_path("/.config/templates/latex/template_multipurpose"),
-        ),
-    ]);
+
+    let templates = parsed_json
+        .templates
+        .iter()
+        .map(|t| (t.name.clone(), get_path(&t.path)))
+        .collect::<Vec<_>>();
+
+    let mapping = templates.into_iter().collect::<HashMap<_, _>>();
 
     let current_dir = current_dir()?;
     let project_dir = current_dir.join(&project_name);

@@ -68,6 +68,7 @@ fn main() -> io::Result<()> {
     Ok(())
 }
 
+/// Adds the home directory to the path
 fn get_path(partial_path: &str) -> String {
     let mut partial_path = partial_path.to_string().chars().collect::<Vec<_>>();
     partial_path.remove(0);

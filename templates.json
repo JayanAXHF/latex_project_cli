@@ -1,0 +1,36 @@
+{
+	"templates": [
+		{
+			"name": "PNAS-style numbered-lines(single column)",
+			"path": "/.config/templates/latex/template_num_lines"
+		},
+		{
+			"name": "PNAS-Style no line number (double column)",
+			"path": "/.config/templates/latex/template_double_column"
+		},
+		{
+			"name": "Styled Report (one-column)",
+			"path": "/.config/templates/latex/template_report_styled"
+		},
+		{
+			"name": "Global Leaders Delegate Research",
+			"path": "/.config/templates/latex/template_research_global_leaders"
+		},
+		{
+			"name": "Position Paper Template",
+			"path": "/.config/templates/latex/template_position_paper"
+		},
+		{
+			"name": "Draft Resolution Template",
+			"path": "/.config/templates/latex/template_draft_resolution"
+		},
+		{
+			"name": "Multipurpose Report Template",
+			"path": "/.config/templates/latex/template_multipurpose"
+		},
+		{
+			"name": "Report, 2 Columns",
+			"path": "/.config/templates/latex/Tau Class Lab Report Template/"
+		}
+	]
+}

@@ -1,6 +1,5 @@
 use inquire::Select;
 use serde::{Deserialize, Serialize};
-use std::path::PathBuf;
 use std::{
     collections::HashMap,
     env::{self, current_dir},
